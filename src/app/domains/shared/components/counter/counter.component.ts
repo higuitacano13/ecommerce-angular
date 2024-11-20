@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChange } from '@angular/core';
+import { Component, Input, signal, SimpleChanges } from '@angular/core';
 import { ProductComponent } from "../../../products/components/product/product.component";
 
 @Component({
@@ -11,9 +11,12 @@ import { ProductComponent } from "../../../products/components/product/product.c
 export class CounterComponent {
   @Input({required: true}) duration: number = 0;
   @Input({required: true}) message: string = ''
+  counter = signal(0);
+  counterRef: number | undefined;
+  
 
   // -- Ciclo de vida de los componentes -- //
-  
+
   constructor(){
     // -> Async methods are not allowed
     // -> It render before the pages! Note: Only one time
@@ -21,11 +24,16 @@ export class CounterComponent {
     console.log('-'.repeat(10));
   }
 
-  ngOnChanges(changes: SimpleChange){
+  ngOnChanges(changes: SimpleChanges){
     // -> It render before and during the pages!
     console.log('ngOnChanges!');
     console.log('-'.repeat(10));
     console.log(changes);
+
+    const duration = changes['duration'];
+    if(duration && duration.currentValue !== duration.previousValue){
+      this.doSomething();
+    }
   }
 
   ngOnInit(){
@@ -35,6 +43,11 @@ export class CounterComponent {
     console.log('-'.repeat(10));
     console.log('duration => ', this.duration);
     console.log('message => ', this.message);
+
+    // this.counterRef = window.setInterval(() => {
+    //   console.log('run interval')
+    //   this.counter.update(statePrev => statePrev + 1);
+    // },1000);
   }
 
   ngAfterViewInit(){
@@ -48,6 +61,13 @@ export class CounterComponent {
     // -> Allow to know if the child component was render!
     console.log('ngOnDestroy!');
     console.log('-'.repeat(10));
+
+    // -> Destroy task
+    //window.clearInterval(this.counterRef);
+  }
+
+  doSomething(){
+    console.log('change duration')
   }
 
 }

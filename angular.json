@@ -122,5 +122,12 @@
         }
       }
     }
+  },
+  "development": {
+    "optimization": false,
+    "extractLicenses": false,
+    "sourceMap": true,
+    "ssr": false,
+    "prerender": false
   }
 }
