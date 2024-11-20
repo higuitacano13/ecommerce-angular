@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
+
 export class ListComponent {
   fromChild(event: string){
     console.log('You are in the parent component');
