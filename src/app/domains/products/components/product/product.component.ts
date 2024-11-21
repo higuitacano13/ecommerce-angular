@@ -15,6 +15,6 @@ export class ProductComponent {
 
   addToCardHandler(){
     console.log('On click event actived!')
-    this.addToCard.emit('Mensaje enviado desde el componente hijo ' + this.product.title);
+    this.addToCard.emit(this.product);
   }
 }

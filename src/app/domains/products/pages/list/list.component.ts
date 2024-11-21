@@ -2,11 +2,13 @@ import { Component, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../shared/models/product.model';
+import { HeaderComponent } from "../../../shared/components/header/header.component";
+
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [ProductComponent, CommonModule],
+  imports: [ProductComponent, CommonModule,HeaderComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -57,8 +59,7 @@ export class ListComponent {
     this.products.set(initProducts);
   }
 
-  addtoCart(event: string){
-    console.log('You are in the parent component');
-    console.log(event)
+  addtoCart(product: Product){
+    this.cartList.update(prevState => [...prevState, product])
   }
 }
