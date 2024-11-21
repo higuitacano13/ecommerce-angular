@@ -14,6 +14,7 @@ import { Product } from '../../../shared/models/product.model';
 export class ListComponent {
 
   products = signal<Product[]>([]);
+  cartList = signal<Product[]>([]);
 
   constructor(){
     const initProducts: Product[] = [
@@ -56,7 +57,7 @@ export class ListComponent {
     this.products.set(initProducts);
   }
 
-  fromChild(event: string){
+  addtoCart(event: string){
     console.log('You are in the parent component');
     console.log(event)
   }
