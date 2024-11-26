@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../../shared/models/product.model';
-import { HeaderComponent } from "../../../shared/components/header/header.component";
-import { CartService } from '../../../shared/services/cart.service';
+import { Product } from '@shared/models/product.model';
+import { HeaderComponent } from "@shared/components/header/header.component";
+import { CartService } from '@shared/services/cart.service';
+import { ProductService } from '@shared/services/product.service';
 
 
 @Component({
@@ -15,49 +16,19 @@ import { CartService } from '../../../shared/services/cart.service';
 })
 
 export class ListComponent {
-
-  products = signal<Product[]>([]);
   private cartService = inject(CartService);
-
-  constructor(){
-    const initProducts: Product[] = [
-      {
-        id: Date.now(),
-        title: 'Producto 1',
-        price: 200,
-        image: 'https://picsum.photos/640/640?r=13',
-        creationAt: new Date().toISOString()
+  private productService = inject(ProductService);
+  products = signal<Product[]>([]);
+  
+  ngOnInit(){
+    this.productService.getProducts().subscribe({
+      next: (products) => {
+        this.products.set(products);
       },
-      {
-        id: Date.now(),
-        title: 'Producto 2',
-        price: 500,
-        image: 'https://picsum.photos/640/640?r=12',
-        creationAt: new Date().toISOString()
-      },
-      {
-        id: Date.now(),
-        title: 'Producto 3',
-        price: 130,
-        image: 'https://picsum.photos/640/640?r=15',
-        creationAt: new Date().toISOString()
-      },
-      {
-        id: Date.now(),
-        title: 'Producto 4',
-        price: 400,
-        image: 'https://picsum.photos/640/640?r=16',
-        creationAt: new Date().toISOString()
-      },
-      {
-        id: Date.now(),
-        title: 'Producto 5',
-        price: 800,
-        image: 'https://picsum.photos/640/640?r=1',
-        creationAt: new Date().toISOString()
-      },
-    ];
-    this.products.set(initProducts);
+      error: () => {
+        console.error('Se ha generado un error obteniendo los productos')
+      }
+    });
   }
 
   addtoCart(product: Product){
