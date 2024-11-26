@@ -63,7 +63,7 @@
 <div class="fixed border-l-4 top-0 right-0 bg-red z-40 w-72 h-screen p-4 overflow-y-auto transition-transform bg-white"
 [class.translate-x-full]="hideSideMenu()">
   <div class="flex justify-between items-center">
-    <p class="text-xl">My Cart</p>
+    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Lista de Productos</h5>
     <button (click)="toogleSideMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -81,10 +81,29 @@
       </svg>
     </button>
   </div>
-  <div>
-    <div *ngFor="let product of cart">
-        <p>{{product.title}}</p>
-        <p>{{product.price}}</p>
+
+  <!-- Carrito de Compras -->
+  <div class="flow-root" >
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" *ngFor="let product of cart">
+        <li class="py-3 sm:py-4">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <img class="w-8 h-8 rounded-full" [src]="product.image" [alt]="product.title">
+                </div>
+                <div class="flex-1 min-w-0 ms-4">
+                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                      {{product.title}}
+                    </p>
+                </div>
+                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                  ${{product.price}}
+                </div>
+            </div>
+        </li>
+    </ul>
+    <hr>
+    <div>
+      <p class="text-lg text-gray-900 dark:text-white">Total: ${{total()}}</p>
     </div>
   </div>
 </div>
