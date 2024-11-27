@@ -95,14 +95,14 @@
                     </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  ${{product.price}}
+                  {{product.price | currency: '$': 'symbol': '1.2'}}
                 </div>
             </div>
         </li>
     </ul>
     <hr>
     <div>
-      <p class="text-lg text-gray-900 dark:text-white">Total: ${{total()}}</p>
+      <p class="text-lg text-gray-900 dark:text-white">Total: ${{total() | currency: '$': 'symbol': '1.2'}}</p>
     </div>
   </div>
 </div>
