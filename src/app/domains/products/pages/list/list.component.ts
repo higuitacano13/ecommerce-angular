@@ -10,7 +10,7 @@ import { ProductService } from '@shared/services/product.service';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [ProductComponent, CommonModule,HeaderComponent],
+  imports: [ProductComponent, CommonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
@@ -24,6 +24,10 @@ export class ListComponent {
     this.productService.getProducts().subscribe({
       next: (products) => {
         this.products.set(products);
+
+        products.forEach(product => {
+          console.log(product);
+        });
       },
       error: () => {
         console.error('Se ha generado un error obteniendo los productos')

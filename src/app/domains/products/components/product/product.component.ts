@@ -9,13 +9,12 @@ import { RouterLinkWithHref } from '@angular/router';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CurrencyPipe, DatePipe, UpperCasePipe, ReversePipe, TimeAgoPipe, RouterLinkWithHref],
+  imports: [CurrencyPipe, UpperCasePipe, TimeAgoPipe, RouterLinkWithHref],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
   @Input({required:true}) product!: Product;
-
   @Output() addToCard = new EventEmitter();
 
   addToCardHandler(){
