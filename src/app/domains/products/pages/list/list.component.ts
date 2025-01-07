@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './list.component.css'
 })
 
-export class ListComponent {
+export default class ListComponent {
   private cartService = inject(CartService);
   private productService = inject(ProductService);
   private categoryService = inject(CategoryService);
@@ -27,6 +27,7 @@ export class ListComponent {
   categories = signal<Category[]>([]);
   
   ngOnInit(){
+    this.getProducts();
     this.getCategories();
   }
 
