@@ -3,3 +3,11 @@
 Este e-commerce es una aplicación web creada con Angular V.17 y Tailwind la cuál se conecta al API de Fake API de Platzi para obtener la información de diferentes productos. Cuenta con la funcionalidad de carrito de compras, detalle del producto y consulta por categoría.
 
 
+# Módulos Utilizados
+- Angular V.17.
+- Tailwind.
+- FastAPI.
+
+# Deploy
+
+La apliación fue desplegada en Vercel, podrás encontrarla en el siguiente link: https://e-commerce-6jn2f0564-juan-higuitas-projects.vercel.app/
