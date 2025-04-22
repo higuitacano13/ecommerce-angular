@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Angular
+# 💰 E-Commerce Angular
 E-Commerce Angular es una aplicación web desarrollada con **Angular** que simula una tienda en línea, permitiendo a los usuarios explorar productos, gestionar un carrito de compras y realizar pedidos. La aplicación consume servicios RESTful públicos proporcionados para obtener la información de los productos.
 
 # 🚀 Tecnologías utilizadas
@@ -50,4 +50,5 @@ ng serve --open
 La aplicación se abrirá automáticamente en tu navegador en http://localhost:4200/.
 
 # 🖼️ Imágenes del proyecto
+![ecommerce_1](https://github.com/user-attachments/assets/8043c3e4-6e0f-4f65-89f6-e647a376d66a)
 
