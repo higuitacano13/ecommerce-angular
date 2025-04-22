@@ -50,5 +50,16 @@ ng serve --open
 La aplicación se abrirá automáticamente en tu navegador en http://localhost:4200/.
 
 # 🖼️ Imágenes del proyecto
-![ecommerce_1](https://github.com/user-attachments/assets/8043c3e4-6e0f-4f65-89f6-e647a376d66a)
+
+<p align="center">
+  <img src="![ecommerce_1](https://github.com/user-attachments/assets/ab91b84e-7a01-4689-9e03-2522d0971d12)
+" width="30%" style="margin: 0 10px;" />
+  <img src="![ecommerce_2](https://github.com/user-attachments/assets/4a261c74-6d7c-4ff0-97c4-655bfa49a362)
+" width="30%" style="margin: 0 10px;" />
+  <img src="![ecommerce_3](https://github.com/user-attachments/assets/b698d992-e566-4fe7-b9ff-4df5b3bbee6f)
+" width="30%" style="margin: 0 10px;" />
+</p>
+
+
+
 
