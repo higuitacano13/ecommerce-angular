@@ -28,22 +28,24 @@ E-Commerce Angular es una aplicación web desarrollada con **Angular** que simul
 # 🛠️ Instalación y ejecución local
 **1. Clonar el repositorio:**
 
-´´´
+```bash
 git clone https://github.com/higuitacano13/ecommerce-angular.git
 cd ecommerce-angular
-´´´
+```
+
 
 **2. Instalar dependencias:**
 
-´´´
+```bash
 npm install
-´´´
+```
+
 
 **3. Ejecutar la aplicación::**
 
-´´´
+```bash
 ng serve --open
-´´´
+```
 
 La aplicación se abrirá automáticamente en tu navegador en http://localhost:4200/.
 
